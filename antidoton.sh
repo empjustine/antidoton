@@ -14,8 +14,8 @@ export XDG_DATA_DIRS
 export XDG_CONFIG_DIRS
 export XDG_CACHE_HOME
 
-: ${ANTIDOTON_DIR:=$XDG_DATA_DIR/antidoton}
+: ${ANTIDOTON_DIR:=$XDG_DATA_HOME/antidoton}
 
-for f in "${ANTIDOTON_DIR}/xdg-base-directory-specification.d/*.env.sh" ; do
+for f in "${ANTIDOTON_DIR}/xdg-base-directory-specification.d/"*".env.sh" ; do
 	test -f "$f" && . "$f"
 done
